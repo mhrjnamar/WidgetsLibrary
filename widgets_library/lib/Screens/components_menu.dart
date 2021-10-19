@@ -16,7 +16,11 @@ class _ComponentsMenuState extends State<ComponentsMenu> {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [componentViewText(), loginScreen()],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            componentViewText(),
+            loginScreen()
+          ],
         ),
       ),
     );

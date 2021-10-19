@@ -4,7 +4,15 @@ import 'package:widgets_library/Screens/components_menu.dart';
 import 'package:widgets_library/backend/providers/carousel_indicator.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      MultiProvider(
+          providers: [
+            ChangeNotifierProvider<CarouselIndicator>(
+                create: (_) => CarouselIndicator()),
+          ],
+          child:const MyApp()
+      )
+      );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,13 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider<CarouselIndicator>(
-              create: (_) => CarouselIndicator()),
-        ],
-        child: const ComponentsMenu(),
-      ),
+      home: const ComponentsMenu(),
     );
   }
 }

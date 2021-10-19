@@ -53,27 +53,32 @@ class LoginCarousel {
           }).toList(),
         ),
         SizedBox(
-          height: 100,
+          height: MediaQuery.of(context).size.height * 0.018,
           child: ListView.builder(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemCount: loginList.length,
             itemBuilder: (context, index) {
-              return  Center(
-                child: Consumer<CarouselIndicator>(
-                  builder: (context, data, child){
-                    if(data.getCurrentIndex()==index){
-                      return const Icon(
-                        Icons.circle,
-                        color: Colors.black87,
-                      );
-                    }else{
-                      return const Icon(
-                        Icons.circle,
-                        color: Colors.grey,
-                      );
-                    }
-                  },
+              return  SizedBox(
+                height:  MediaQuery.of(context).size.height * 0.018,
+                child: Center(
+                  child: Consumer<CarouselIndicator>(
+                    builder: (context, data, child){
+                      if(data.getCurrentIndex()==index){
+                        return  Icon(
+                          Icons.circle,
+                          color: const Color(0XFF0B735F),
+                          size: MediaQuery.of(context).size.height * 0.018,
+                        );
+                      }else{
+                        return  Icon(
+                          Icons.circle,
+                          color: const Color(0XFFC4C4C4),
+                          size: MediaQuery.of(context).size.height * 0.016,
+                        );
+                      }
+                    },
+                  ),
                 ),
               );
             },

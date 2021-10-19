@@ -15,7 +15,7 @@ class BaseTitleBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         rightWidget ?? Container(),
-        Expanded(child: centerWidget ?? Container()),
+        centerWidget ?? Container(),
         leftWidget ?? Container(),
       ],
     );
