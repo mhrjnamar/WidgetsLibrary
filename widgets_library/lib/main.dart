@@ -1,6 +1,8 @@
 
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 import 'package:widgets_library/Screens/components_view.dart';
+import 'package:widgets_library/backend/providers/carousel_indicator.dart';
 
 
 void main() {
@@ -18,7 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ComponentView(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<CarouselIndicator>(create: (_)=>CarouselIndicator()),
+        ],
+        child: const ComponentView(),
+      ),
     );
   }
 }
