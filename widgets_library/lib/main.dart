@@ -1,6 +1,14 @@
 
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 import 'package:widgets_library/Screens/components_view.dart';
+import 'package:widgets_library/Screens/ferinaya.dart';
+import 'package:widgets_library/backend/providers/carousel_indicator.dart';
+import 'package:widgets_library/bottom_bar.dart';
+import 'package:widgets_library/common_buttons.dart';
+import 'package:widgets_library/restaurant_card.dart';
+
+import 'naya.dart';
 
 
 void main() {
@@ -14,11 +22,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ComponentView(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<CarouselIndicator>(create: (_)=>CarouselIndicator()),
+        ],
+        child: const BottomBar(),
+      ),
     );
   }
 }
