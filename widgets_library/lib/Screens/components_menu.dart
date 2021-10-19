@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_library/Screens/component_from.dart';
 import 'package:widgets_library/Screens/components_view.dart';
+import 'package:widgets_library/modules/login/login.dart';
 
 class ComponentsMenu extends StatefulWidget {
   const ComponentsMenu({Key? key}) : super(key: key);
@@ -15,9 +16,7 @@ class _ComponentsMenuState extends State<ComponentsMenu> {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [
-            componentViewText(),
-          ],
+          children: [componentViewText(), loginScreen()],
         ),
       ),
     );
@@ -39,5 +38,14 @@ class _ComponentsMenuState extends State<ComponentsMenu> {
               MaterialPageRoute(builder: (context) => const ComponentForm()));
         },
         child: const Text("Components From"));
+  }
+
+  Widget loginScreen() {
+    return TextButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
+        },
+        child: const Text("Login Screen"));
   }
 }
