@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_library/backend/dynamic_screen.dart';
 import 'package:widgets_library/components/image_carousel.dart';
+import 'package:widgets_library/components/login_carousel.dart';
 import 'package:widgets_library/components/preference_container.dart';
 import 'package:widgets_library/components/search_bar.dart';
 
@@ -26,14 +27,30 @@ class ComponentView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SearchBar(title: "Search Restaurants", width: 50.0),
-            ImageCarousel(imgList),
-            PreferenceContainer(list: [
-              Parameters(title: 'Family',icons: Icons.family_restroom),
-              Parameters(title: 'Home',icons: Icons.home_filled),
-              Parameters(title: 'Bar',icons: Icons.bar_chart),
-            ],
-            ),
+            // SearchBar(title: "Search Restaurants", width: 50.0),
+            // ImageCarousel(imgList),
+            // PreferenceContainer(list: [
+            //   Parameters(title: 'Family',icons: Icons.family_restroom),
+            //   Parameters(title: 'Home',icons: Icons.home_filled),
+            //   Parameters(title: 'Bar',icons: Icons.bar_chart),
+            // ],
+            // ),
+            LoginCarousel(
+              context: context,
+                loginList: [
+              Login(
+                  title: "Book your favourite\nrestaurants or hotels",
+                  image: "assets/png/login1.png"
+              ),
+              Login(
+                  title: "Quick view Menu of  wide range\nof restaurants",
+                  image: "assets/png/login2.png"
+              ),
+              Login(
+                  title: "Find your Favourite Hotel in different city ",
+                  image: "assets/jpg/image2.jpg"
+              )
+            ]).getCarousel(),
           ],
         ),
       ),
