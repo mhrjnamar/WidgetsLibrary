@@ -23,7 +23,7 @@ class GenericTextField extends StatelessWidget {
     Key? key,
     required this.focusNode,
     required this.textEditingController,
-    this.inputType: TextInputType.name,
+    this.inputType = TextInputType.name,
     required this.validator,
     this.hint = "",
     this.stratingIcon = "",
@@ -39,6 +39,9 @@ class GenericTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40)
+      ),
       margin: EdgeInsets.only(
         bottom: size.getHeight(3),
         top: 2,
@@ -92,19 +95,19 @@ class GenericTextField extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           // hintText: hint,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: AppColor.border, width: 2),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: AppColor.border, width: 1.5),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: AppColor.error, width: 1.5),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: AppColor.error, width: 1.5),
           ),
         ),
