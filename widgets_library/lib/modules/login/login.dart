@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 btnColor: Colors.deepOrangeAccent,
                 route: const ComponentView(),
                 width: DynamicSize(context: context).getWidth(334),
-                height: DynamicSize(context: context).getHeight(51),
+                height: DynamicSize(context: context).getHeight(60),
                 borderRadius: 15.0,
               )
             ],
