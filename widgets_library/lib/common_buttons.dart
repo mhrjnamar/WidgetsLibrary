@@ -20,7 +20,7 @@ class _State extends State<CommonButtons> {
             },
             child: const Text("Click Here"),
             style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350.0, 50.00),
+                minimumSize: const Size(350.0, 51.00),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20))),
           )
